@@ -54,21 +54,17 @@ def total_even_pairs(src)
   # As a reminder any number % 2 will return 0 or 1. If the result is 0, then
   # the number was even. Review the operator documentation if you've forgotten
   # this!
-   index = 0
-  num_holder = []
+  sum = 0
+  index = 0
   
   while index < src.length do
-    if (src[index][0] < src[index][-1])
-       num_holder.push(src[index][-1])
-    elsif (src[index][-1] < src[index][0])
-      num_holder.push(src[index][0])
-    else
-      num_holder.push(src[index][-1])
+    if (src[index][0] % 2 == 0 && src[index][-1] % 2 == 0)
+      sum += (src[index][0] + src[index][-1])
       
     
     end
     index += 1
   end
   
-  return num_holder
+  return sum
 end
